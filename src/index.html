@@ -10,24 +10,26 @@
 <body>
     
     <form action="">
+        <h1>Daily Journal</h1>
         <fieldset>
-            <h1>Daily Journal</h1>
             <label for="journalDate">Date of Entry</label>
             <input type="date" name="journalDate" id="journalDate">
-            <br>
-            Concepts Covered <input type="text" name="conceptsCovered" id="conceptsCovered">
-            <br>
-            Journal Entry <textarea name="journalEntry" id="journalEntry" cols="20" rows="1"></textarea>
-            <br>
-            Mood of the day <select name="mood" id="mood">
-                <option value="happy">Happy</option>
-                <option value="sad">Sad</option>
-                <option value="mad">Mad</option>
-                <option value="okay">Okay</option>
-            </select>
-            <br>
-            <input type="submit" value="Record Journal Entry">            
         </fieldset>
+        <fieldset>
+            Concepts Covered <input type="text" name="conceptsCovered" id="conceptsCovered">
+        </fieldset>
+        <fieldset>
+            Journal Entry <textarea name="journalEntry" id="journalEntry" cols="20" rows="1"></textarea>
+        </fieldset>
+        <fieldset>
+            Mood of the day <select name="mood" id="mood">
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="mad">Mad</option>
+            <option value="okay">Okay</option>
+            </select>
+        </fieldset>
+        <input type="submit" value="Record Journal Entry">            
     </form>
 
 </body>
