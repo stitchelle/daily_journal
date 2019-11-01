@@ -1,4 +1,29 @@
-fieldset{
+h1 {
+    margin: 1%;
+}
+
+form {
     display: flex;
     flex-direction: column;
 }
+
+fieldset {
+    margin: 1%;
+    border: none;
+}
+
+label {
+    padding-right: 1%;
+}
+
+#recordButton {
+    margin: 2%;
+    padding-left: 1%;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 150px;
+}
+
+
+
