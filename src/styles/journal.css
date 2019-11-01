@@ -12,8 +12,45 @@ fieldset {
     border: none;
 }
 
-label {
-    padding-right: 1%;
+input {
+    border:solid;
+    border-width: 1px;
+}
+
+#date {
+    padding-right: 65px;
+}
+
+#journalDate {
+    width: 150px;
+}
+
+#concepts {
+    padding-right: 35px;
+}
+
+#conceptsCovered {
+    width: 150px;
+}
+
+#entry {
+    padding-right: 67px;
+}
+
+#journalEntry {
+    border: solid;
+    border-width: 1px;
+    width: 145px;
+}
+
+#moodOfTheDay {
+    padding-right: 47px;
+}
+
+#mood {
+    border: solid;
+    border-width: 1px;
+    width: 150px;
 }
 
 #recordButton {
