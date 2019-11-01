@@ -1,8 +1,11 @@
 export default {
     buildAndAppendForm: () => {
         const form = `
-            <h1>Daily Journal</h1>
-            
+            <header>
+                <h1>Daily Journal</h1>
+                <hr/>
+            </header
+
             <form action="">
                 <fieldset>
                     <label id="date" for="journalDate">Date of Entry</label>

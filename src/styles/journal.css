@@ -1,65 +1,70 @@
-h1 {
-    margin: 1%;
+html{
+    margin: 0;
+}
+header{
+    background-color: skyblue;
+    margin: 0;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+h1 {
+    margin: auto;
+    padding: 2%;
 }
 
 fieldset {
+    display: flex;
+    flex-direction: column;
     margin: 1%;
+    margin-top: 3%;
+    margin-left: 3%;
     border: none;
 }
 
-input {
-    border:solid;
-    border-width: 1px;
+label {
+    margin-bottom: 3px;
+    font-weight: bold;
 }
 
-#date {
-    padding-right: 65px;
+input {
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
 }
 
 #journalDate {
-    width: 150px;
-}
-
-#concepts {
-    padding-right: 35px;
+    width: 250px;
+    background-color: white;
 }
 
 #conceptsCovered {
-    width: 150px;
-}
-
-#entry {
-    padding-right: 67px;
+    width: 250px;
 }
 
 #journalEntry {
     border: solid;
     border-width: 1px;
-    width: 145px;
-}
-
-#moodOfTheDay {
-    padding-right: 47px;
+    border-color: grey;
+    width: 248px;
 }
 
 #mood {
     border: solid;
     border-width: 1px;
-    width: 150px;
+    border-color: grey;
+    width: 260px;
+    background-color: white;
 }
 
+
 #recordButton {
-    margin: 2%;
+    margin: 3%;
     padding-left: 1%;
     border: solid;
     border-width: 1px;
     border-radius: 5px;
+    border-color: navy;
     width: 150px;
+    background-color:rgb(230, 255, 255);
 }
 
 
