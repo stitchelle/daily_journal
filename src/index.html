@@ -16,20 +16,23 @@
             <input type="date" name="journalDate" id="journalDate">
         </fieldset>
         <fieldset>
-            Concepts Covered <input type="text" name="conceptsCovered" id="conceptsCovered">
+            <label for="conceptsCovered">Concepts Covered</label>
+            <input type="text" name="conceptsCovered" id="conceptsCovered">
         </fieldset>
         <fieldset>
-            Journal Entry <textarea name="journalEntry" id="journalEntry" cols="20" rows="1"></textarea>
+            <label for="journalEntry">Journal Entry</label>
+            <textarea name="journalEntry" id="journalEntry" cols="20" rows="1"></textarea>
         </fieldset>
         <fieldset>
-            Mood of the day <select name="mood" id="mood">
+            <label for="journalEntry">Mood of the day</label>
+            <select name="mood" id="mood">
             <option value="happy">Happy</option>
             <option value="sad">Sad</option>
             <option value="mad">Mad</option>
             <option value="okay">Okay</option>
             </select>
         </fieldset>
-        <input type="submit" value="Record Journal Entry">            
+        <button id="recordButton">Record Journal Entry</button>        
     </form>
 
 </body>
