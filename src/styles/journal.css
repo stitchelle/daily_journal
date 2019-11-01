@@ -1,4 +1,66 @@
-fieldset{
+h1 {
+    margin: 1%;
+}
+
+form {
     display: flex;
     flex-direction: column;
 }
+
+fieldset {
+    margin: 1%;
+    border: none;
+}
+
+input {
+    border:solid;
+    border-width: 1px;
+}
+
+#date {
+    padding-right: 65px;
+}
+
+#journalDate {
+    width: 150px;
+}
+
+#concepts {
+    padding-right: 35px;
+}
+
+#conceptsCovered {
+    width: 150px;
+}
+
+#entry {
+    padding-right: 67px;
+}
+
+#journalEntry {
+    border: solid;
+    border-width: 1px;
+    width: 145px;
+}
+
+#moodOfTheDay {
+    padding-right: 47px;
+}
+
+#mood {
+    border: solid;
+    border-width: 1px;
+    width: 150px;
+}
+
+#recordButton {
+    margin: 2%;
+    padding-left: 1%;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 150px;
+}
+
+
+
