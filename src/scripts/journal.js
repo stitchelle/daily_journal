@@ -12,7 +12,7 @@ const journalEntries = [{
 },
 {
     date: "2019/10/01",
-    concept: "Chapters 2,3 and 4",
+    concept: "Chapters 2, 3 and 4",
     entry: "Command Line, Styling with CSS and Semantic HTML components",
     mood: "OK"
 },
@@ -22,7 +22,7 @@ const journalEntries = [{
     entry: "Intro to Git snd DVCS",
     mood: "OK"
 }]
-
+ 
 /*
 Purpose: To create, and return, a string template that
 represents a single journal entry object as HTML
