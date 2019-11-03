@@ -1,10 +1,5 @@
-// import buildAndAppendForm from "./formMaker.js"
-
-// buildAndAppendForm.buildAndAppendForm()
-
-
-
-    const journalEntry = [{
+export default {
+    journalEntry: [{
         date: "2019/09/30",
         concept: "Basic Terminal Commands",
         entry: "We created out GitHub accounts and learned basic terminal commands.",
@@ -22,14 +17,4 @@
         entry: "Intro to Git snd DVCS",
         mood: "OK"
     }]
-
-    const makeJournalEntryComponent = (journalEntry) {
-        return`
-        <section>
-        <h3>${journalEntry.concept}</h3>
-        <p>${journalEntry.entry}</p>
-        <p>${journalEntry.mood}</p>
-        <p>${journalEntry.date}</p>
-      </section>
-    `
-    }
+}
