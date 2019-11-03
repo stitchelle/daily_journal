@@ -4,7 +4,7 @@ buildAndAppendForm.buildAndAppendForm()
 
 
 
-const journalEntry = [{
+const journalEntries = [{
     date: "2019/09/30",
     concept: "Basic Terminal Commands",
     entry: "We created out GitHub accounts and learned basic terminal commands.",
@@ -30,7 +30,7 @@ represents a single journal entry object as HTML
 Arguments: journalEntry (object)
 */
 
-const makeJournalEntryComponent = (journalEntry) {
+const makeJournalEntryComponent = (journalEntry) => {
     return `
         <section>
         <h3>${journalEntry.concept}</h3>
@@ -41,15 +41,16 @@ const makeJournalEntryComponent = (journalEntry) {
     `
 }
 
-const renderJournalEntries = (entries) => {
+const renderJournalEntry = (entries) => {
     let HtmlForAllEntries = ""
     entries.forEach(entry => {
-        const entryHtml = entryComponent.makeJournalEntryComponent(entry)
+        const entryHtml = makeJournalEntryComponent(entry)
         HtmlForAllEntries += entryHtml
     })
     const logArticle = document.querySelector(".entryLog")
     logArticle.innerHTML = HtmlForAllEntries
 }
 
-renderJournalEntries(journalEntries)
+renderJournalEntry(journalEntries)
+
 
