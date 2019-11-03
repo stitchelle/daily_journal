@@ -40,3 +40,16 @@ const makeJournalEntryComponent = (journalEntry) {
       </section>
     `
 }
+
+const renderJournalEntries = (entries) => {
+    let HtmlForAllEntries = ""
+    entries.forEach(entry => {
+        const entryHtml = entryComponent.makeJournalEntryComponent(entry)
+        HtmlForAllEntries += entryHtml
+    })
+    const logArticle = document.querySelector(".entryLog")
+    logArticle.innerHTML = HtmlForAllEntries
+}
+
+renderJournalEntries(journalEntries)
+
