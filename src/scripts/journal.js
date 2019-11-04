@@ -4,25 +4,6 @@ buildAndAppendForm.buildAndAppendForm()
 
 
 
-const journalEntries = [{
-    date: "2019/09/30",
-    concept: "Basic Terminal Commands",
-    entry: "We created out GitHub accounts and learned basic terminal commands.",
-    mood: "OK"
-},
-{
-    date: "2019/10/01",
-    concept: "Chapters 2, 3 and 4",
-    entry: "Command Line, Styling with CSS and Semantic HTML components",
-    mood: "OK"
-},
-{
-    date: "2019/10/02",
-    concept: "Chapter 6",
-    entry: "Intro to Git snd DVCS",
-    mood: "OK"
-}]
- 
 /*
 Purpose: To create, and return, a string template that
 represents a single journal entry object as HTML
@@ -51,6 +32,16 @@ const renderJournalEntry = (entries) => {
     logArticle.innerHTML = HtmlForAllEntries
 }
 
-renderJournalEntry(journalEntries)
+
+const getJournalEntries = () => {
+    return fetch("http://localhost:3000/entries")
+        .then(response => response.json())
+        .then(response => renderJournalEntry(response))
+        
+    }
+
+getJournalEntries()
+
+
 
 
