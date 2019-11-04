@@ -4,8 +4,6 @@ buildAndAppendForm.buildAndAppendForm()
 
 
 
-const journalEntries = 
- 
 /*
 Purpose: To create, and return, a string template that
 represents a single journal entry object as HTML
@@ -34,6 +32,16 @@ const renderJournalEntry = (entries) => {
     logArticle.innerHTML = HtmlForAllEntries
 }
 
-renderJournalEntry(journalEntries)
+
+const getJournalEntries = () => {
+    return fetch("http://localhost:3000/entries")
+        .then(response => response.json())
+        .then(response => renderJournalEntry(response))
+        
+    }
+
+getJournalEntries()
+
+
 
 
