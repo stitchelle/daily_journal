@@ -1,8 +1,11 @@
 import buildAndAppendForm from "./formMaker.js"
-import getJournalEntries from "./data.js"
+import API from "./data.js"
+import renderJournalEntry from "./entriesDom.js"
 
 
 
 buildAndAppendForm.buildAndAppendForm()
 
-getJournalEntries.getJournalEntries()
+API.API.getJournalEntries()
+
+.then(response => renderJournalEntry.renderJournalEntry(response))
