@@ -1,47 +1,21 @@
 import buildAndAppendForm from "./formMaker.js"
+import API from "./data.js"
+import renderJournalEntry from "./entriesDom.js"
+
+
 
 buildAndAppendForm.buildAndAppendForm()
 
+/* ---what I originally did---
+API.API.getJournalEntries()
 
-
-/*
-Purpose: To create, and return, a string template that
-represents a single journal entry object as HTML
-
-Arguments: journalEntry (object)
+.then(response => renderJournalEntry.renderJournalEntry(response))
 */
+/*
+    Main application logic that uses the functions and objects
+    defined in the other JavaScript files.
 
-const makeJournalEntryComponent = (journalEntry) => {
-    return `
-        <section>
-        <h3>${journalEntry.concept}</h3>
-        <p>${journalEntry.entry}</p>
-        <p>${journalEntry.mood}</p>
-        <p>${journalEntry.date}</p>
-      </section>
-    `
-}
-
-const renderJournalEntry = (entries) => {
-    let HtmlForAllEntries = ""
-    entries.forEach(entry => {
-        const entryHtml = makeJournalEntryComponent(entry)
-        HtmlForAllEntries += entryHtml
-    })
-    const logArticle = document.querySelector(".entryLog")
-    logArticle.innerHTML = HtmlForAllEntries
-}
-
-
-const getJournalEntries = () => {
-    return fetch("http://localhost:3000/entries")
-        .then(response => response.json())
-        .then(response => renderJournalEntry(response))
-        
-    }
-
-getJournalEntries()
-
-
-
-
+    Change the fake variable names below to what they should be
+    to get the data and display it.
+*/
+API.API.getJournalEntries().then(response => renderJournalEntry.renderJournalEntry(response))
