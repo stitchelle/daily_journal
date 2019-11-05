@@ -1,10 +1,12 @@
 import buildAndAppendForm from "./formMaker.js"
+import buildAndAppendFilter from "./formMaker.js"
 import API from "./data.js"
 import render from "./entriesDom.js"
 import save from "./entryComponent.js"
 
 
 buildAndAppendForm.buildAndAppendForm()
+buildAndAppendFilter.buildAndAppendFilter()
 
 /* ---what I originally did---
 API.API.getJournalEntries()
