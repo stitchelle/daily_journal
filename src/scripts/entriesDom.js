@@ -5,7 +5,7 @@ export default {
         renderJournalEntry: (entries) => {
             let HtmlForAllEntries = ""
             entries.forEach(entry => {
-                const entryHtml = make.make.makeJournalEntryComponent(entry)
+                const entryHtml = make.makeJournalEntryComponent(entry)
                 HtmlForAllEntries += entryHtml
             })
             const logArticle = document.querySelector(".entryLog")
