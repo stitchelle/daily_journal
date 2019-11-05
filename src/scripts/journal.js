@@ -3,6 +3,7 @@ import buildAndAppendFilter from "./formMaker.js"
 import API from "./data.js"
 import render from "./entriesDom.js"
 import save from "./entryComponent.js"
+import registerDeleteListener from "./entryComponent.js"
 
 
 buildAndAppendForm.buildAndAppendForm()
@@ -25,3 +26,9 @@ API.API.getJournalEntries().then((data) => render.render.renderJournalEntry(data
 save.addEventListenerToRecordButton()
 
 save.attachEventListenerToRadioButton()
+
+// Invoke the method that attaches the event listener
+registerDeleteListener.registerDeleteListener()
+
+// Get all recipes from API and render them in the DOM
+API.getAllEntries().then(render)
