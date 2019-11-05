@@ -5,8 +5,9 @@ represents a single journal entry object as HTML
 Arguments: journalEntry (object)
 */
 export default {
-    makeJournalEntryComponent: (journalEntry) => {
-        return `
+    make: {
+        makeJournalEntryComponent: (journalEntry) => {
+            return `
         <section>
         <h3>${journalEntry.concept}</h3>
         <p>${journalEntry.entry}</p>
@@ -14,5 +15,6 @@ export default {
         <p>${journalEntry.date}</p>
       </section>
     `
+        }
     }
 }
