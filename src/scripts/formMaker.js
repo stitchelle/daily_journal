@@ -20,8 +20,8 @@ export default {
                     <textarea name="journalEntry" id="journalEntry" cols="20" rows="1"></textarea>
                 </fieldset>
                 <fieldset>
-                    <label id="moodOfTheDay" for="journalEntry">Mood of the day</label>
-                    <select name="mood" id="mood">
+                    <label id="moodOfTheDay" for="mood-of-the-day">Mood of the day</label>
+                    <select name="mood-input" id="mood">
                         <option value="happy">Happy</option>
                         <option value="sad">Sad</option>
                         <option value="mad">Mad</option>
