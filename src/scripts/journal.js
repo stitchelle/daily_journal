@@ -1,6 +1,6 @@
 import buildAndAppendForm from "./formMaker.js"
 import API from "./data.js"
-import renderJournalEntry from "./entriesDom.js"
+import render from "./entriesDom.js"
 
 
 
@@ -18,4 +18,4 @@ API.API.getJournalEntries()
     Change the fake variable names below to what they should be
     to get the data and display it.
 */
-API.API.getJournalEntries().then(response => renderJournalEntry.renderJournalEntry(response))
+API.API.getJournalEntries().then(response => render.render.renderJournalEntry(response))

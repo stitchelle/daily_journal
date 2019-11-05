@@ -1,13 +1,15 @@
-import makeJournalEntryComponent from "./entryComponent.js"
+import make from "./entryComponent.js"
 
 export default {
-    renderJournalEntry: (entries) => {
-        let HtmlForAllEntries = ""
-        entries.forEach(entry => {
-            const entryHtml = makeJournalEntryComponent.makeJournalEntryComponent(entry)
-            HtmlForAllEntries += entryHtml
-        })
-        const logArticle = document.querySelector(".entryLog")
-        logArticle.innerHTML = HtmlForAllEntries
+    render: {
+        renderJournalEntry: (entries) => {
+            let HtmlForAllEntries = ""
+            entries.forEach(entry => {
+                const entryHtml = make.make.makeJournalEntryComponent(entry)
+                HtmlForAllEntries += entryHtml
+            })
+            const logArticle = document.querySelector(".entryLog")
+            logArticle.innerHTML = HtmlForAllEntries
+        }
     }
 }
