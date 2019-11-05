@@ -23,3 +23,5 @@ API.API.getJournalEntries().then((data) => render.render.renderJournalEntry(data
 
 // renderJournalEntries.renderJournalEntries()
 save.addEventListenerToRecordButton()
+
+save.attachEventListenerToRadioButton()
