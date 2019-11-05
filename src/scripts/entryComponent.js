@@ -6,6 +6,8 @@ represents a single journal entry object as HTML
 
 Arguments: journalEntry (object)
 */
+const deleteEntry = document.querySelector(".entryLog")
+
 export default {
 
     makeJournalEntryComponent: (journalEntry) => {
@@ -15,6 +17,7 @@ export default {
         <p>${journalEntry.entry}</p>
         <p>${journalEntry.mood}</p>
         <p>${journalEntry.date}</p>
+        <button id="deleteEntry--${journalEntry.id}">Delete Entry</button>
       </section>
     `
     },
@@ -26,7 +29,7 @@ export default {
             const mood = document.querySelector("#mood").value
 
             //save journal entry (json-server returns it) then render it
-            API.API.saveJournalEntry({ date, concept, entry, mood })
+            API.saveJournalEntry({ date, concept, entry, mood })
                 .then(API.API.getJournalEntries)
                 .then(response => render.render.renderJournalEntry(response))
         })
@@ -52,6 +55,20 @@ export default {
                         render.render.renderJournalEntry(filteredArray)
                     })
             })
+        })
+    },
+    
+    registerDeleteListener () {
+        deleteEntry.addEventListener("click", event => {
+            if (event.target.id.startsWith("deleteEntry--")) {
+                // Extract recipe id from the button's id attribute
+                const entryToDelete = event.target.id.split("--")[1]
+
+                // Invoke the delete method, then get all recipes and render them
+                API.deleteEntry(entryToDelete)
+                    .then(API.getAllEntries)
+                    .then(response => render.render.renderJournalEntry(response))
+            }
         })
     }
 }
