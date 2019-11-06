@@ -1,5 +1,6 @@
 import render from "./entriesDom.js"
 import API from "./data.js"
+import buildAndAppendForm from "./formMaker.js"
 /*
 Purpose: To create, and return, a string template that
 represents a single journal entry object as HTML
@@ -7,6 +8,9 @@ represents a single journal entry object as HTML
 Arguments: journalEntry (object)
 */
 const deleteEntry = document.querySelector(".entryLog")
+const editEntry = document.querySelector(".entryLog")
+
+
 
 export default {
 
@@ -58,8 +62,8 @@ export default {
             })
         })
     },
-    
-    registerDeleteListener () {
+
+    registerDeleteListener() {
         deleteEntry.addEventListener("click", event => {
             if (event.target.id.startsWith("deleteEntry--")) {
                 // Extract recipe id from the button's id attribute
@@ -70,6 +74,53 @@ export default {
                     .then(API.getAllEntries)
                     .then(response => render.render.renderJournalEntry(response))
             }
+        })
+    },
+
+    editEntryListener() {
+        editEntry.addEventListener("click", event => {
+            if (event.target.id.startsWith("editEntry--")) {
+                const entryIdToEdit = event.target.id.split("--")[1]
+                API.getSingleJournalEntry(entryIdtoEdit)
+                .then(entry => {
+                    buildAndAppendForm.buildAndAppendForm("edit")
+                    const hiddenEntryId = document.querySelector("#entryId")
+                    const date = document.querySelector("#journalDate")
+                    const concept = document.querySelector("#conceptsCovered")
+                    const journalEntry = document.querySelector("#journalEntry")
+                    const mood = document.querySelector("#mood")
+
+                hiddenEntryId.value = entry.id // Hidden value. User no see. 
+                date.value = entry.date
+                concept.value = entry.concept
+                journalEntry.value = entry.entry
+                mood.value = entry.mood
+                })
+
+                /*
+                    This function will get the recipe from the API
+                    and populate the form fields (see below)
+                */
+                // updateFormFields(entryIdToEdit)
+            }
+        })
+    },
+    saveButtonListenr() {
+        document.querySelector("#saveChanges").addEventListener("click", e => {
+            const hiddenEntryId = document.querySelector("#entryId").value
+            const date = document.querySelector("#journalDate").value
+            const concept = document.querySelector("#conceptsCovered").value
+            const entry = document.querySelector("#journalEntry").value
+            const mood = document.querySelector("#mood").value
+
+            API.editEntry(hiddenEntryId, { date, concept, entry, mood })
+                .then(() => {
+                    buildAndAppendForm.buildAndAppendForm()
+                    API.API.getJournalEntries()
+                        .then(response => render.render.renderJournalEntry(response))
+                })
+
+
         })
     }
 }

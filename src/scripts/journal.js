@@ -22,13 +22,11 @@ API.API.getJournalEntries()
 
 API.API.getJournalEntries().then((data) => render.render.renderJournalEntry(data))
 
-// renderJournalEntries.renderJournalEntries()
-save.addEventListenerToRecordButton()
-
 save.attachEventListenerToRadioButton()
 
 // Invoke the method that attaches the event listener
 registerDeleteListener.registerDeleteListener()
 
+registerDeleteListener.editEntryListener()
 // Get all recipes from API and render them in the DOM
 API.getAllEntries().then(render)

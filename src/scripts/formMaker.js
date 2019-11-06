@@ -1,12 +1,15 @@
+import addEventListenerToRecordButton from "./entryComponent.js"
+
 export default {
-    buildAndAppendForm: () => {
-        const form = `
+    buildAndAppendForm: (entry) => {
+        let form = `
             <header>
                 <h1>Daily Journal</h1>
                 <hr/>
             </header
 
             <form action="">
+                <input type="hidden" id="entryId" value="" />
                 <fieldset class="form-fieldset">
                     <label id="date" for="journalDate">Date of Entry</label>
                     <input type="date" name="journalDate" id="journalDate">
@@ -28,13 +31,21 @@ export default {
                         <option value="okay">Okay</option>
                     </select>
                 </fieldset>
-            </form>
-
-            <button id="recordButton">Record Journal Entry</button>  
+            </form> 
             `
+            let formContainerDiv = document.querySelector("#form-container")
+            // formContainerDiv.innerHTML = form
 
-        const formContainerDiv = document.querySelector("#form-container")
-        formContainerDiv.innerHTML = form
+            if (entry === "edit") {
+                formContainerDiv.innerHTML = "" 
+                formContainerDiv.innerHTML = form += `<button id="saveChanges">Save Changes</button>`
+             } else {
+                 formContainerDiv.innerHTML = "" 
+                 formContainerDiv.innerHTML = form += `<button id="recordButton">Record Journal Entry</button>`
+                 addEventListenerToRecordButton.addEventListenerToRecordButton()
+     
+             }
+
     },
     buildAndAppendFilter: () => {
         const moodFilter = `
