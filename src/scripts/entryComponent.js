@@ -17,6 +17,7 @@ export default {
         <p>${journalEntry.entry}</p>
         <p>${journalEntry.mood}</p>
         <p>${journalEntry.date}</p>
+        <button id="editEntry--${journalEntry.id}">Edit Entry</button>
         <button id="deleteEntry--${journalEntry.id}">Delete Entry</button>
       </section>
     `
